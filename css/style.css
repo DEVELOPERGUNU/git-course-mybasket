@@ -1,18 +1,51 @@
-body{
-
-    padding: 0;
-    margin: 0;
-    background-color: black;
-    color:white
+/* MyBasket custom styles. Tailwind handles the utility layout. */
+:root { color-scheme: light; }
+html { scroll-behavior: smooth; scroll-padding-top: 120px; }
+body { min-width: 320px; }
+button, a, input, select { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+.hero { isolation: isolate; }
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border: 1px solid rgba(22, 163, 74, .10);
+  border-radius: 50%;
+  right: -110px;
+  top: -170px;
 }
-
-
-
-.container{
-
-padding: 100px;
-text-align: center;
-
-
-
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(22, 163, 74, .12);
+  border-radius: 50%;
+  right: 12%;
+  bottom: -210px;
 }
+.benefit { display: flex; align-items: center; gap: 12px; border: 1px solid #edf2ee; border-radius: 18px; background: #fff; padding: 14px; }
+.benefit > span { display: grid; width: 42px; height: 42px; flex-shrink: 0; place-items: center; border-radius: 14px; background: #effcf4; font-size: 21px; }
+.benefit strong { display: block; font-size: 13px; font-weight: 800; }
+.benefit p { margin-top: 3px; font-size: 11px; color: #778179; }
+.category { display: flex; min-height: 112px; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border: 1px solid #edf2ee; border-radius: 20px; background: white; padding: 12px 6px; font-size: 12px; font-weight: 700; transition: .2s ease; }
+.category:hover, .category.active { border-color: #86dba5; background: #effcf4; color: #166534; transform: translateY(-2px); }
+.category-emoji { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 16px; background: #f5f8f5; font-size: 25px; }
+.product-card { overflow: hidden; border: 1px solid #edf2ee; border-radius: 22px; background: #fff; transition: transform .2s ease, box-shadow .2s ease; }
+.product-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(23, 34, 27, .08); }
+.product-art { position: relative; display: grid; min-height: 145px; place-items: center; background: #f5faf6; font-size: 66px; }
+.product-art .tag { position: absolute; left: 10px; top: 10px; border-radius: 999px; background: #dcfce7; padding: 4px 8px; color: #166534; font-size: 10px; font-weight: 800; }
+.product-content { padding: 13px; }
+.product-title { min-height: 40px; font-size: 14px; font-weight: 800; line-height: 1.4; }
+.product-unit { margin-top: 3px; color: #7a847c; font-size: 11px; }
+.add-button { display: flex; align-items: center; justify-content: center; gap: 5px; border: 1px solid #b8e8c7; border-radius: 11px; background: #effcf4; padding: 9px 10px; color: #166534; font-size: 12px; font-weight: 800; transition: .15s; }
+.add-button:hover { background: #16a34a; color: white; }
+.add-button.added { background: #16a34a; color: white; }
+.qty-control { display: flex; align-items: center; justify-content: space-between; border: 1px solid #b8e8c7; border-radius: 11px; background: #effcf4; padding: 4px; color: #166534; font-size: 13px; font-weight: 800; }
+.qty-control button { display: grid; width: 28px; height: 28px; place-items: center; border-radius: 8px; background: white; font-size: 18px; }
+.cart-row { display: flex; align-items: center; gap: 12px; border: 1px solid #edf2ee; border-radius: 16px; padding: 12px; }
+.cart-row-art { display: grid; width: 54px; height: 54px; flex-shrink: 0; place-items: center; border-radius: 13px; background: #f5faf6; font-size: 29px; }
+body.drawer-open { overflow: hidden; }
+@media (min-width: 640px) { .product-art { min-height: 175px; font-size: 78px; } .product-content { padding: 16px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
