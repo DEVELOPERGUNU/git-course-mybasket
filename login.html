@@ -1,13 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>this is login file</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: #f3f6fb;
+      color: #182230;
+      font-family: Arial, sans-serif;
+    }
+    .login-card {
+      width: min(100%, 420px);
+      padding: 40px;
+      background: #fff;
+      border: 1px solid #e5eaf1;
+      border-radius: 16px;
+      box-shadow: 0 16px 40px rgba(24, 34, 48, .08);
+    }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    .subtitle { margin: 0 0 28px; color: #667085; line-height: 1.5; }
+    .field { margin-bottom: 18px; }
+    label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 600; }
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #d0d5dd;
+      border-radius: 8px;
+      font: inherit;
+    }
+    input:focus { outline: 3px solid #dbeafe; border-color: #3977e8; }
+    .form-options { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 4px 0 24px; font-size: 14px; }
+    .remember { display: flex; align-items: center; gap: 8px; color: #475467; }
+    .remember input { width: auto; margin: 0; }
+    a { color: #245fc5; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    button {
+      width: 100%;
+      padding: 13px;
+      border: 0;
+      border-radius: 8px;
+      background: #2563d9;
+      color: #fff;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover { background: #1e50b3; }
+    .signup { margin: 22px 0 0; color: #667085; text-align: center; font-size: 14px; }
+    @media (max-width: 480px) { .login-card { padding: 28px 22px; } }
+  </style>
 </head>
 <body>
-    
-  <h1>Welcome to login page </h1>
-
+  <main class="login-card">
+    <h1>Welcome back</h1>
+    <p class="subtitle">Sign in to continue to your account.</p>
+    <form action="#" method="post">
+      <div class="field">
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+      </div>
+      <div class="form-options">
+        <label class="remember"><input type="checkbox" name="remember"> Remember me</label>
+        <a href="#">Forgot password?</a>
+      </div>
+      <button type="submit">Sign in</button>
+    </form>
+    <p class="signup">New here? <a href="#">Create an account</a></p>
+  </main>
 </body>
 </html>
